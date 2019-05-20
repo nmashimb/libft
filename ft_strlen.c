@@ -6,10 +6,10 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 16:19:51 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/17 16:35:14 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/05/20 12:15:47 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 int		ft_strlen(char *str)
 {
 	int len;
@@ -19,4 +19,3 @@ int		ft_strlen(char *str)
 		len++;
 	return (len);
 }
-
