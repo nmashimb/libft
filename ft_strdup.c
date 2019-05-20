@@ -6,11 +6,12 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:29:28 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/20 10:07:06 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/05/20 10:46:47 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_strdup(char *s)
 {
