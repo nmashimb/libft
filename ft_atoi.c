@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:30:00 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/22 15:03:06 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/05/23 10:49:35 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	sign = 1;
-	while (str[i] != '\0' && (str[i] == '\t' || str[i] == ' '))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 	{
