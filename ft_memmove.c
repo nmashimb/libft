@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:31:34 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/27 15:25:16 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/05/27 15:26:34 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 
 	printf("ft_ %s\n", ft_memmove(to + 3, hol + 13, 5));
 	printf("mem_ %s\n", memmove(too + 3, hol + 13, 5));
-	printf("strng to: %s\n", to);
+	//printf("strng to: %s\n", to);
 	printf("strng too: %s\n", too);
 
 
