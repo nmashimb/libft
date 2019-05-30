@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	{
 		while (i < n)
 		{
-			hold_str[i] = '0';
+			hold_str[i] = 0;
 			i++;
 		}
 	}
