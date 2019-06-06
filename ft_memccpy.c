@@ -14,12 +14,12 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,\
 		int c, size_t n)
 {
 	size_t		i;
-	char		*s_des;
-	char		*s_src;
+	unsigned char	*s_des;
+	unsigned char	*s_src;
 
 	i = 0;
-	s_des = (char *)dst;
-	s_src = (char *)src;
+	s_des = (unsigned char *)dst;
+	s_src = (unsigned char *)src;
 	if (n != 0)
 	{
 		while (i < n)
@@ -27,7 +27,6 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,\
 			if (s_src[i] == (unsigned char)c)
 				return (&dst[i + 1]);
 			s_des[i] = s_src[i];
-			s_des++;
 			i++;
 		}
 	}
