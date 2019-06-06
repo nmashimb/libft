@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 	char	*hold_str;
@@ -22,5 +22,5 @@ char	*ft_memset(void *b, int c, size_t len)
 		hold_str[i] = (char)c;
 		i++;
 	}
-	return (hold_str);
+	return (b);
 }
