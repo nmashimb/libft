@@ -9,7 +9,7 @@ $(NAME):
          gcc $(FLAGS) -c $(SRC)
          ar rc (NAME) $(OBJ)
          ranlib $(NAME)
- clean:
+clean:
         rm -f $(OBJ)
 fclean: clean
         rm -f $(NAME)
