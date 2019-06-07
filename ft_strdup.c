@@ -6,26 +6,25 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:29:28 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/20 10:46:47 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:18:39 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(const char *s1)
 {
 	char	*str;
 	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * sizeof(s) + 1);
+	str = (char *)malloc(ft_strlen(s1) + 1);
 	if (str == NULL)
-		return (0);+
+		return (0);
 
-	while (s[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		str[i] = s[i];
+		str[i] = s1[i];
 		i++;
 	}
 	str[i] = '\0';
