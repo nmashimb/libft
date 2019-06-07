@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:59:45 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/07 14:13:07 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/07 14:35:27 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int		ft_strlen(char *s);
+size_t	ft_strlen(char *s);
 
 #endif
