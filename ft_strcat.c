@@ -6,19 +6,19 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:46:08 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/20 17:07:09 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/08 12:08:30 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int i;
-	int j;
+#include "libft.h"
 
-	i = 0;
+char	*ft_strcat(char *s1, const char *s2)
+{
+	size_t i;
+	size_t j;
+
 	j = 0;
-	while (s1[i] != '\0')
-		i++;
+	i = ft_strlen(s1);
 	while (s2[j] != '\0')
 	{
 		s1[i + j] = s2[j];
