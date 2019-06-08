@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:50:58 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/21 17:25:46 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/08 12:22:07 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (s[i] != (char)c)
