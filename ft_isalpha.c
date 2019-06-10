@@ -6,13 +6,15 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:10:25 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/22 15:18:38 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/10 11:15:24 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isalpha(int c)
 {
-	if (((char)c >= 65 && (char)c <= 90) || ((char)c >= 97 && (char)c <= 122))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	return (0);
 }
