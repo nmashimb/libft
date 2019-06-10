@@ -6,9 +6,11 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 16:09:29 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/24 15:57:05 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/10 12:16:55 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -17,12 +19,9 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	hold_str = (char *)s;
-	if (n != 0)
+	while (i < n)
 	{
-		while (i < n)
-		{
-			hold_str[i] = 0;
-			i++;
-		}
+		hold_str[i] = 0;
+		i++;
 	}
 }
