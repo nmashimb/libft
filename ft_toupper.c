@@ -6,16 +6,18 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:09:15 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/22 18:34:59 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/10 11:58:21 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_toupper(int c)
 {
 	int hold;
 
 	hold = 0;
-	if ((char)c >= 97 && (char)c <= 122)
-		return (hold = (char)c - 32);
+	if (c >= 97 && c <= 122)
+		return (hold = c - 32);
 	return (c);
 }
