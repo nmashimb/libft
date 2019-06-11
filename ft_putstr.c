@@ -6,17 +6,19 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:39:12 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/05 11:45:38 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:27:56 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr(char const s)
+void	ft_putstr(char const *s)
 {
+	if (!s)
+		return ;
 	while (*s)
 	{
-		write(1, s, 1);
-		str++;
+		write(1, &(*s), 1);
+		s++;
 	}
 }
