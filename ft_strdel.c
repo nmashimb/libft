@@ -6,21 +6,16 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 10:51:41 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/01 12:21:35 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 12:03:51 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	ft_strdel(char **ap)
+void	ft_strdel(char **as)
 {
-	 size_t i;
-
-    i = 0;
-    while (i < sizeof(ap)/sizeof(char *))
-    {
-        free(ap[i]);
-        i++;
-    }
-	ap = NULL; //???
+	if (!as)
+		return ;
+	free(*as);
+	*as = NULL;
 }
