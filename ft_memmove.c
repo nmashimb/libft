@@ -6,14 +6,13 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:31:34 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/27 15:26:34 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 10:55:06 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 	char	*s_des;
@@ -22,27 +21,20 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 	i = 0;
 	s_des = (char *)dst;
 	s_src = (char *)src;
-	while (i < n)
+	if (!s_src && !s_des)
+		return (NULL);
+	if (s_src > s_des)
 	{
-		s_des[i] = s_src[i];
-		i++;
+		while (i < len)
+		{
+			s_des[i] = s_src[i];
+			i++;
+		}
 	}
-	return (s_des);
-
-}
-
-int main(void)
-{
-	char to[50] = "earth";
-	char hol[50] = "hello world, Nyiko here";
-	char too[50] = "earth";
-
-
-	printf("ft_ %s\n", ft_memmove(to + 3, hol + 13, 5));
-	printf("mem_ %s\n", memmove(too + 3, hol + 13, 5));
-	//printf("strng to: %s\n", to);
-	printf("strng too: %s\n", too);
-
-
-	return 0;
+	if (s_src < s_des)
+	{
+		while (len--)
+			s_des[len] = s_src[len];
+	}
+	return (dst);
 }
