@@ -6,31 +6,30 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:34:26 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/03 12:52:15 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 12:31:22 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
 	size_t	i;
+	size_t	len;
+	char	*tmp;
 
-	if (s[0] == '\0')
+	if (s == NULL)
 		return (0);
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	str = (char *)malloc(i + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
+	len = ft_strlen(s);
+	tmp = (char *)malloc(len + 1);
+	if (tmp == NULL)
+		return (0);
+	while (i < len)
 	{
-		str[i] = f(i, str[i]);
+		tmp[i] = f(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	tmp[len] = '\0';
+	return (tmp);
 }
