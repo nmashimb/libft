@@ -6,31 +6,24 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 12:26:44 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/01 13:41:14 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 11:42:10 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_strclr(char *s)
 {
 	size_t i;
+	size_t len;
 
+	if (!s)
+		return ;
 	i = 0;
-	while (s[i] != '\0')
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		s[i] = '\0';
+		s[i] = 0;
 		i++;
 	}
-}
-
-int main()
-{
-	char *s = "world";
-
-	ft_strclr(s);
-	printf("%s\n", s);
-
-	return (0);
 }
