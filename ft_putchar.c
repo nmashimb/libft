@@ -6,13 +6,14 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:33:31 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/05 11:37:48 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:24:22 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	if (ft_isascii(c))
+		write(1, &c, 1);
 }
