@@ -6,14 +6,11 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:57:36 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/05/31 10:46:54 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 11:25:49 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-//#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
@@ -30,17 +27,4 @@ char	*ft_strnew(size_t size)
 		i++;
 	}
 	return (str);
-}
-
-int	main()
-{
-	char *ss	= ft_strnew(5);
-	ss = "hello";
-	//printf("%s\n", ss);
-	int i = 0;
-	while (ss[i] != '\0')
-	{
-		write(1, &ss[i], 1);
-		i++;
-	}
 }
