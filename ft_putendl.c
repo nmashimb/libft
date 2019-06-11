@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:48:16 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/05 11:54:06 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:35:05 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ void	ft_putendl(char const *s)
 {
 	char nl;
 
-	nl = '\n';
+	if (!s)
+		return ;
 	while (*s)
 	{
 		write(1, s, 1);
 		s++;
 	}
+	nl = '\n';
 	write(1, &nl, 1);
 }
