@@ -6,14 +6,16 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:59:24 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/06 17:02:31 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:01:30 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 	{
 		write(fd, s, 1);
