@@ -6,36 +6,29 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 14:39:36 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/05 17:55:22 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:18:52 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n = -2147483648) //min value of integers, but doesnt prnt on its own
-		putstr("-2147483648"); // change std func to ft_ funct
-	if ((n >= 0 && n <= 9))
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if ((n >= 0 && n <= 9))
 	{
-		putchar(n + '0');
+		ft_putchar_fd(n + '0', fd);
 	}
-	if (n >= 10)
+	else if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
-		putchar('-');
+		ft_putchar_fd('-', fd);
 		ft_putnbr_fd(-n, fd);
 	}
 }
 
-int	main()
-{
-	int a = -2147483648;
-	ft_putnbr_fd(a, 1);
-	return 0;
-}
