@@ -6,21 +6,23 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 17:04:32 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/06 17:05:31 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:05:33 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char const *s, int fd)
 {
 	char nl;
 
-	nl = '\n';
+	if (!s)
+		return ;
 	while (*s)
 	{
 		write(fd, s, 1);
 		s++;
 	}
+	nl = '\n';
 	write(fd, &nl, 1);
 }
