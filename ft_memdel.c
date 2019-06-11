@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:21:50 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/11 11:24:52 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/11 12:04:56 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap) //NOT PROTECTED
 {
-	if (!ap || !*ap)
+	if (!ap)
 		return ;
 	free(*ap);
 	*ap = NULL;
