@@ -6,13 +6,12 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:08:07 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/06 16:25:27 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/12 17:42:11 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -23,14 +22,18 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	nul_indx;
 	char	**str;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	len = 13; //strlen(s);
-	nul_indx = 13; //len;
+	len = strlen(s);
+	nul_indx = len;
 	str = (char **)malloc(sizeof(char *) * (len + 1));
+	if (!str)
+		return (NULL);
 	while (s[i] != '\0')
 	{
-		if (s[i] == c) //incr i if del found
+		while (s[i] == c) //incr i if del found
 			i++;
 		len = 0;
 		start = i;
@@ -39,22 +42,26 @@ char	**ft_strsplit(char const *s, char c)
 			i++;
 			len++;
 		}
-		if (s[i] == '\0')
-			break;
 		str[j] = (char *)malloc(len + 1); // static func?
 		strncpy(str[j], &s[start], len);
-		str[len] = NULL;
-		i++;
+		str[len] = '\0';
+		if (s[i] == '\0')
+		{
+			str[nul_indx] = '\0';
+			return (str);
+		}
 		j++;
+		i++;
+
 	}
-	str[nul_indx] = NULL;
+	str[i] = '\0';
 	return (str);
 }
 
 int		main()
 {
-	char *s = "*HELLO*WORLD*UNDER*";
+	char *s = "UNDER";
 	char **x = ft_strsplit(s, '*');
-	printf("%s\n", x[2]);
+	printf("%s\n", x[0]);
 	return 0;
 }
