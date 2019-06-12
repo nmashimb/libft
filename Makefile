@@ -6,12 +6,13 @@
 #    By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 14:39:57 by nmashimb          #+#    #+#              #
-#    Updated: 2019/06/11 17:32:04 by nmashimb         ###   ########.fr        #
+#    Updated: 2019/06/12 13:43:01 by nmashimb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC = ft_memcpy.c\
+	  ft_memset.c\
 	  ft_memccpy.c\
 	  ft_memchr.c\
 	  ft_memcmp.c\
@@ -26,12 +27,17 @@ SRC = ft_memcpy.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr.c\
 	  ft_putnbr_fd.c\
+	  ft_strlcat.c\
+	  ft_strstr.c\
+	  ft_strnstr.c\
 	  ft_strmap.c\
 	  ft_strmapi.c\
 	  ft_strequ.c\
 	  ft_strnequ.c\
 	  ft_strsub.c\
 	  ft_strjoin.c\
+	  ft_strtrim.c\
+	  ft_strsplit.c\
 	  ft_strdel.c\
 	  ft_striter.c\
 	  ft_striteri.c\
@@ -61,6 +67,7 @@ SRC = ft_memcpy.c\
 
 FLAGS = -Wall -Wextra -Werror
 OBJ = ft_memcpy.o\
+	  ft_memset.o\
 	  ft_memccpy.o\
 	  ft_memchr.o\
 	  ft_memcmp.o\
@@ -75,12 +82,17 @@ OBJ = ft_memcpy.o\
 	  ft_putendl_fd.o\
 	  ft_putnbr.o\
 	  ft_putnbr_fd.o\
+	  ft_strlcat.o\
+	  ft_strstr.o\
+	  ft_strnstr.o\
 	  ft_strmap.o\
 	  ft_strmapi.o\
 	  ft_strequ.o\
 	  ft_strnequ.o\
 	  ft_strsub.o\
 	  ft_strjoin.o\
+	  ft_strtrim.o\
+	  ft_strsplit.o\
 	  ft_strdel.o\
 	  ft_striter.o\
 	  ft_striteri.o\
