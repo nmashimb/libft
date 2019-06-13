@@ -6,62 +6,56 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:08:07 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/12 17:42:11 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:15:06 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
+#include <string.h>
 char	**ft_strsplit(char const *s, char c)
 {
-	size_t	i; //main str indx
-	size_t	j; //str indx
+	size_t	i;
+	size_t	j;
 	size_t	len;
 	size_t	start;
-	size_t	nul_indx;
 	char	**str;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	j = 0;
-	len = strlen(s);
-	nul_indx = len;
+	len = ft_strlen(s);
 	str = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (s[i] != '\0')
+	i = 0;
+	j = -1;
+	while (s[i])
 	{
-		while (s[i] == c) //incr i if del found
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		len = 0;
 		start = i;
-		while (s[i] != c && s[i] != '\0') //find length of substr (static func)
+		len = 0;
+		while (s[i] != c && s[i] != '\0')
 		{
 			i++;
 			len++;
 		}
-		str[j] = (char *)malloc(len + 1); // static func?
-		strncpy(str[j], &s[start], len);
-		str[len] = '\0';
-		if (s[i] == '\0')
-		{
-			str[nul_indx] = '\0';
-			return (str);
-		}
 		j++;
-		i++;
-
+		str[j] = ft_strsub(s, start, len);	
 	}
-	str[i] = '\0';
+	str[j] = NULL;
 	return (str);
 }
 
-int		main()
+int main()
 {
-	char *s = "UNDER";
+	char *s = "*****hello*****world***";
 	char **x = ft_strsplit(s, '*');
-	printf("%s\n", x[0]);
+	int i = 0;
+	while(x[i] != '\0')
+	{
+		printf("%s\n", x[i]);
+		i++;
+	}
 	return 0;
 }
