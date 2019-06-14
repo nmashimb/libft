@@ -6,11 +6,12 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 14:26:11 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/11 12:19:49 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:51:38 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	size_t	i;
