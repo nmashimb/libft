@@ -6,13 +6,13 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 12:52:54 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/12 13:08:20 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:49:17 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	start_ind(char const *s, size_t start)
+static size_t	ft_start_ind(char const *s, size_t start)
 {
 	while ((s[start] != '\0') && (s[start] == ' ' || s[start] == '\n'\
 			|| s[start] == '\t'))
@@ -20,7 +20,7 @@ static size_t	start_ind(char const *s, size_t start)
 	return (start);
 }
 
-static size_t	end_ind(char const *s, size_t end)
+static size_t	ft_end_ind(char const *s, size_t end)
 {
 	while (end >= 0 && (s[end] == ' ' || s[end] == '\n' || s[end] == '\t'))
 		end--;
@@ -39,11 +39,11 @@ char			*ft_strtrim(char const *s)
 		return (NULL);
 	if (*s == '\0')
 		return ((char *)s);
-	start = start_ind(s, start);
+	start = ft_start_ind(s, start);
 	if (s[start] == '\0')
 		return (ft_strcpy(ft_strnew(1), ""));
 	end = ft_strlen(s) - 1;
-	end = end_ind(s, end);
+	end = ft_end_ind(s, end);
 	str = (char *)malloc(end - start + 1 + 1);
 	if (!str)
 		return (0);
