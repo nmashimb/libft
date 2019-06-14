@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:08:07 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/14 13:02:40 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:44:21 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	len;
 	char	**str;
 
+	if (!s)
+		return (NULL);
 	len = ft_num_words(s, c);
 	if (!(str = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
