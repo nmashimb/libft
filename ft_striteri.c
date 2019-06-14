@@ -6,12 +6,11 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 14:15:02 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/11 12:11:22 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:54:07 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
