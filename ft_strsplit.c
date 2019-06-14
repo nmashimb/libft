@@ -6,56 +6,67 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:08:07 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/13 15:15:06 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:02:40 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-char	**ft_strsplit(char const *s, char c)
+
+static size_t	ft_num_words(char const *s, char c)
+{
+	size_t	i;
+	size_t	wrd_c;
+
+	i = 0;
+	wrd_c = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			while (s[i] == c)
+				i++;
+		if (s[i])
+		{
+			wrd_c++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+	}
+	return (wrd_c);
+}
+
+static	size_t	ft_num_chr(char const *s, char c)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	len;
-	size_t	start;
 	char	**str;
 
-	if (!s)
-		return (NULL);
-	len = ft_strlen(s);
-	str = (char **)malloc(sizeof(char *) * (len + 1));
-	if (!str)
+	len = ft_num_words(s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	i = 0;
-	j = -1;
-	while (s[i])
+	j = 0;
+	while (s[i] != '\0')
 	{
+		if (s[i] != c && s[i] != '\0')
+		{
+			str[j] = ft_strsub(s, i, ft_num_chr(&s[i], c));
+			j++;
+			i = i + ft_num_chr(&s[i], c);
+		}
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		start = i;
-		len = 0;
-		while (s[i] != c && s[i] != '\0')
-		{
-			i++;
-			len++;
-		}
-		j++;
-		str[j] = ft_strsub(s, start, len);	
 	}
 	str[j] = NULL;
 	return (str);
-}
-
-int main()
-{
-	char *s = "*****hello*****world***";
-	char **x = ft_strsplit(s, '*');
-	int i = 0;
-	while(x[i] != '\0')
-	{
-		printf("%s\n", x[i]);
-		i++;
-	}
-	return 0;
 }
