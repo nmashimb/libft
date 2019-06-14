@@ -6,7 +6,7 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:29:28 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/07 15:18:39 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/14 15:47:41 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strdup(const char *s1)
 	str = (char *)malloc(ft_strlen(s1) + 1);
 	if (str == NULL)
 		return (0);
-
 	while (s1[i] != '\0')
 	{
 		str[i] = s1[i];
