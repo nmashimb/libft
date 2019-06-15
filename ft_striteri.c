@@ -6,18 +6,18 @@
 /*   By: nmashimb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 14:15:02 by nmashimb          #+#    #+#             */
-/*   Updated: 2019/06/14 14:54:07 by nmashimb         ###   ########.fr       */
+/*   Updated: 2019/06/15 12:59:01 by nmashimb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t i;
 
 	i = 0;
-	if (s && f)
+	if (s)
 	{
 		while (s[i] != '\0')
 		{
